@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glamora Luxury Beauty - Live Theme Interactive Preview</title>
+  <link rel="stylesheet" href="./assets/glamora-base.css">
+  <style>
+    /* Demo Navigation Bar */
+    .glamora-demo-bar {
+      background: #201217;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+    .glamora-demo-nav {
+      display: flex;
+      gap: 12px;
+    }
+    .glamora-demo-btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.2s ease;
+    }
+    .glamora-demo-btn.active, .glamora-demo-btn:hover {
+      background: #E84E75;
+      border-color: #E84E75;
+    }
+    .page-view {
+      display: none;
+    }
+    .page-view.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Switcher (Home Page vs Product Page) -->
+  <div class="glamora-demo-bar">
+    <div>
+      <span style="font-weight: 700; color: #F5A3B7;">Glamora Theme OS 2.0</span> — Interactive Live Preview
+    </div>
+    <div class="glamora-demo-nav">
+      <button class="glamora-demo-btn active" onclick="switchPage('home')">🏠 Home Page (Screenshot Layout)</button>
+      <button class="glamora-demo-btn" onclick="switchPage('product')">✨ Product Page (Details & Reviews)</button>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="glamora-header">
+    <div class="glamora-container">
+      <div class="glamora-header__inner">
+        <!-- Left: Menu & Brand -->
+        <div class="glamora-header__left">
+          <button type="button" class="glamora-header__menu-btn" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+          </button>
+          <a href="#" class="glamora-logo">
+            <svg class="glamora-logo__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor">
+              <path d="M16 4C18 8 24 10 24 16C24 22 18 26 16 28C14 26 8 22 8 16C8 10 14 8 16 4Z" fill="#FDF0F4" stroke="#E84E75" stroke-width="1.8"/>
+              <circle cx="16" cy="16" r="3" fill="#E84E75"/>
+            </svg>
+            <div>
+              <span class="glamora-logo__text">Glamora</span>
+              <span class="glamora-logo__tagline">BEAUTY LIVES HERE</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Center: Search -->
+        <div class="glamora-header__search">
+          <div class="glamora-search-bar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" placeholder="Search for skincare, makeup, haircare..." aria-label="Search">
+          </div>
+        </div>
+
+        <!-- Right: Actions -->
+        <div class="glamora-header__right">
+          <button class="glamora-header__action" aria-label="Wishlist">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+          <div class="glamora-header__action">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <div class="glamora-header__account-text">
+              <span class="greeting">Hi, Ayesha</span>
+              <span class="account-name">My Account</span>
+            </div>
+          </div>
+          <button type="button" class="glamora-cart-badge-btn" aria-label="Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="glamora-cart-badge">3</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HOME PAGE VIEW ==================== -->
+  <main id="home-view" class="page-view active">
+    <div class="glamora-container">
+      <div class="glamora-store-layout">
+        
+        <!-- LEFT MAIN CONTENT -->
+        <div class="glamora-main-content">
+          
+          <!-- 1. Hero Slider Banner -->
+          <section class="glamora-hero">
+            <div class="glamora-hero__slide">
+              <div class="glamora-hero__text-col">
+                <h1 class="glamora-hero__title">Real Beauty<br>Brighter You</h1>
+                <p class="glamora-hero__subtitle">Skincare. Makeup. Self-Care.<br>All in one place.</p>
+                <a href="#flash-deals" class="glamora-hero__btn">
+                  Shop the Glow
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <div class="glamora-hero__trust">
+                  <div class="glamora-hero__trust-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>100% Original</span>
+                  </div>
+                  <div class="glamora-hero__trust-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Beauty Experts</span>
+                  </div>
+                  <div class="glamora-hero__trust-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <span>Fast Delivery</span>
+                  </div>
+                </div>
+              </div>
+              <div class="glamora-hero__image-col">
+                <div class="glamora-hero__image-wrap">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80" alt="Glamora Radiant Model" class="glamora-hero__img">
+                </div>
+                <div class="glamora-hero__script-badge">Confidence Looks Good On You ♡</div>
+              </div>
+            </div>
+            <div class="glamora-hero__dots">
+              <span class="glamora-hero__dot active"></span>
+              <span class="glamora-hero__dot"></span>
+              <span class="glamora-hero__dot"></span>
+            </div>
+          </section>
+
+          <!-- 2. Category Bubbles -->
+          <section class="glamora-categories">
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=120" alt="Skincare">
+              </div>
+              <span class="glamora-cat-name">Skincare</span>
+            </div>
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=120" alt="Makeup">
+              </div>
+              <span class="glamora-cat-name">Makeup</span>
+            </div>
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1608248597359-54316279f727?w=120" alt="Haircare">
+              </div>
+              <span class="glamora-cat-name">Haircare</span>
+            </div>
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=120" alt="Fragrance">
+              </div>
+              <span class="glamora-cat-name">Fragrance</span>
+            </div>
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=120" alt="Bath & Body">
+              </div>
+              <span class="glamora-cat-name">Bath & Body</span>
+            </div>
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=120" alt="Tools & Accessories">
+              </div>
+              <span class="glamora-cat-name">Tools & Accessories</span>
+            </div>
+            <div class="glamora-cat-item">
+              <div class="glamora-cat-circle">
+                <img src="https://images.unsplash.com/photo-1512290900672-1f486d34e6d4?w=120" alt="New Arrivals">
+              </div>
+              <span class="glamora-cat-name">New Arrivals</span>
+            </div>
+          </section>
+
+          <!-- 3. Promotional Skincare 30% OFF Banner -->
+          <section class="glamora-promo-banner">
+            <div class="glamora-promo-left">
+              <span class="glamora-promo-tag">FLAT</span>
+              <h2 class="glamora-promo-discount">30% OFF</h2>
+              <p class="glamora-promo-sub">On Premium Skincare</p>
+              <a href="#flash-deals" class="glamora-promo-btn">
+                Shop Now
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+            <div class="glamora-promo-center">
+              <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&auto=format&fit=crop&q=80" alt="Premium Jars" class="glamora-promo-jar-img">
+            </div>
+            <div class="glamora-promo-right">
+              <h3 class="glamora-promo-heading-script">BEAUTY<br>BEGINS<br>WITH YOU</h3>
+              <p class="glamora-promo-slogan">Radiant skin. Happier you.</p>
+            </div>
+          </section>
+
+          <!-- 4. Flash Deals with Live Countdown -->
+          <section class="glamora-flash-deals" id="flash-deals">
+            <div class="glamora-section-header">
+              <div class="glamora-section-title-wrap">
+                <h2 class="glamora-section-title"><span>⚡</span> Flash Deals</h2>
+                <div class="glamora-countdown">
+                  <span class="glamora-timer-box" id="glamora-timer-hours">02</span> : 
+                  <span class="glamora-timer-box" id="glamora-timer-minutes">14</span> : 
+                  <span class="glamora-timer-box" id="glamora-timer-seconds">36</span>
+                </div>
+              </div>
+              <a href="#" class="glamora-view-all">View All</a>
+            </div>
+            <div class="glamora-products-grid">
+              
+              <!-- Card 1 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-discount">40% OFF</span>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300" alt="Luminous Face Serum" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Luminous Face Serum</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale">Rs. 1,799</span>
+                    <s class="glamora-card__price-compare">Rs. 2,999</s>
+                  </div>
+                  <button type="button" class="glamora-btn-add-full" onclick="quickAddToCart('Luminous Face Serum', 'Rs. 1,799', 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300')">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-discount">35% OFF</span>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300" alt="Silk Matte Lipstick" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Silk Matte Lipstick</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale">Rs. 1,299</span>
+                    <s class="glamora-card__price-compare">Rs. 1,999</s>
+                  </div>
+                  <button type="button" class="glamora-btn-add-full" onclick="quickAddToCart('Silk Matte Lipstick', 'Rs. 1,299', 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300')">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-discount">50% OFF</span>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Hydrating Sunscreen" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Hydrating Sunscreen</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale">Rs. 1,499</span>
+                    <s class="glamora-card__price-compare">Rs. 2,999</s>
+                  </div>
+                  <button type="button" class="glamora-btn-add-full" onclick="quickAddToCart('Hydrating Sunscreen', 'Rs. 1,499', 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300')">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-discount">30% OFF</span>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1608248597359-54316279f727?w=300" alt="Nourishing Hair Oil" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Nourishing Hair Oil</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale">Rs. 1,399</span>
+                    <s class="glamora-card__price-compare">Rs. 1,999</s>
+                  </div>
+                  <button type="button" class="glamora-btn-add-full" onclick="quickAddToCart('Nourishing Hair Oil', 'Rs. 1,399', 'https://images.unsplash.com/photo-1608248597359-54316279f727?w=300')">Add to Cart</button>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 5. Best Sellers -->
+          <section class="glamora-best-sellers">
+            <div class="glamora-section-header">
+              <h2 class="glamora-section-title">Best Sellers</h2>
+              <a href="#" class="glamora-view-all">View All</a>
+            </div>
+            <div class="glamora-products-grid">
+              
+              <!-- Card #1 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-rank">#1</span>
+                  <button type="button" class="glamora-card__wishlist" onclick="toggleWishlist(this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Revive Night Cream" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Revive Night Cream</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color: #222;">Rs. 2,299</span>
+                  </div>
+                  <div class="glamora-card__rating">
+                    <div class="glamora-stars">★★★★★</div>
+                    <span class="glamora-rating-score">(4.8)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card #2 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-rank">#2</span>
+                  <button type="button" class="glamora-card__wishlist" onclick="toggleWishlist(this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=300" alt="Soft Glam Palette" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Soft Glam Palette</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color: #222;">Rs. 2,499</span>
+                  </div>
+                  <div class="glamora-card__rating">
+                    <div class="glamora-stars">★★★★★</div>
+                    <span class="glamora-rating-score">(4.7)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card #3 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-rank">#3</span>
+                  <button type="button" class="glamora-card__wishlist" onclick="toggleWishlist(this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Pure Glow Cleanser" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Pure Glow Cleanser</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color: #222;">Rs. 1,299</span>
+                  </div>
+                  <div class="glamora-card__rating">
+                    <div class="glamora-stars">★★★★★</div>
+                    <span class="glamora-rating-score">(4.6)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card #4 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__header">
+                  <span class="glamora-card__badge-rank">#4</span>
+                  <button type="button" class="glamora-card__wishlist" onclick="toggleWishlist(this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+                </div>
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300" alt="Velvet Matte Lip Tint" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Velvet Matte Lip Tint</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color: #222;">Rs. 1,199</span>
+                  </div>
+                  <div class="glamora-card__rating">
+                    <div class="glamora-stars">★★★★★</div>
+                    <span class="glamora-rating-score">(4.8)</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 6. Just for You -->
+          <section class="glamora-just-for-you">
+            <div class="glamora-section-header">
+              <div>
+                <h2 class="glamora-section-title">Just for You</h2>
+                <p style="font-size: 11.5px; color: #888; margin-top: 2px;">Based on your browsing & purchase history</p>
+              </div>
+              <a href="#" class="glamora-view-all">View All</a>
+            </div>
+            <div class="glamora-products-grid">
+              
+              <!-- Item 1 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Tea Tree Face Wash" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Tea Tree Face Wash</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color:#222;">Rs. 1,199</span>
+                  </div>
+                  <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Tea Tree Face Wash', 'Rs. 1,199', 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300')"><span class="btn-icon">+</span> Add</button>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300" alt="Rose Quartz Roller" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Rose Quartz Roller</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color:#222;">Rs. 999</span>
+                  </div>
+                  <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Rose Quartz Roller', 'Rs. 999', 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300')"><span class="btn-icon">+</span> Add</button>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300" alt="Niacinamide Serum" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Niacinamide Serum</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color:#222;">Rs. 2,199</span>
+                  </div>
+                  <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Niacinamide Serum', 'Rs. 2,199', 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300')"><span class="btn-icon">+</span> Add</button>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="glamora-product-card">
+                <div class="glamora-card__image-wrapper">
+                  <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Hair Repair Mask" class="glamora-card__img">
+                </div>
+                <div class="glamora-card__body">
+                  <h3 class="glamora-card__title">Hair Repair Mask</h3>
+                  <div class="glamora-card__pricing">
+                    <span class="glamora-card__price-sale" style="color:#222;">Rs. 1,499</span>
+                  </div>
+                  <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Hair Repair Mask', 'Rs. 1,499', 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300')"><span class="btn-icon">+</span> Add</button>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 7. Trust Features Bar -->
+          <section class="glamora-trust-bar">
+            <div class="glamora-trust-item">
+              <div class="glamora-trust-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </div>
+              <div>
+                <h4 class="glamora-trust-title">Free Delivery</h4>
+                <p class="glamora-trust-desc">On orders above Rs. 5,000</p>
+              </div>
+            </div>
+            <div class="glamora-trust-item">
+              <div class="glamora-trust-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <h4 class="glamora-trust-title">100% Authentic</h4>
+                <p class="glamora-trust-desc">Original beauty products</p>
+              </div>
+            </div>
+            <div class="glamora-trust-item">
+              <div class="glamora-trust-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              </div>
+              <div>
+                <h4 class="glamora-trust-title">Easy Returns</h4>
+                <p class="glamora-trust-desc">Hassle-free within 7 days</p>
+              </div>
+            </div>
+            <div class="glamora-trust-item">
+              <div class="glamora-trust-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              </div>
+              <div>
+                <h4 class="glamora-trust-title">Secure Payments</h4>
+                <p class="glamora-trust-desc">Your data is always safe</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR (Cart & Widgets) -->
+        <aside class="glamora-sidebar-wrapper">
+          
+          <!-- Cart Card -->
+          <div class="glamora-cart-card">
+            <div class="glamora-cart-card__header">
+              <h3 class="glamora-cart-card__title">Your Cart (3)</h3>
+              <a href="#" class="glamora-view-all">View All</a>
+            </div>
+
+            <div class="glamora-cart-card__items">
+              
+              <!-- Item 1 -->
+              <div class="glamora-cart-item">
+                <div class="glamora-cart-item__image">
+                  <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=120" alt="Glow Radiance Serum">
+                </div>
+                <div class="glamora-cart-item__details">
+                  <div class="glamora-cart-item__header">
+                    <h4 class="glamora-cart-item__title">Glow Radiance Serum</h4>
+                    <button type="button" class="glamora-cart-item__remove" onclick="removeCartItem(this)">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                  <p class="glamora-cart-item__variant">30ml</p>
+                  <div class="glamora-cart-item__footer">
+                    <div class="glamora-quantity-stepper">
+                      <button type="button" class="glamora-qty-btn minus" onclick="changeItemQty(this, -1)">-</button>
+                      <span class="glamora-qty-val">1</span>
+                      <button type="button" class="glamora-qty-btn plus" onclick="changeItemQty(this, 1)">+</button>
+                    </div>
+                    <div class="glamora-cart-item__price">Rs. 2,999</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="glamora-cart-item">
+                <div class="glamora-cart-item__image">
+                  <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=120" alt="Matte Love Lipstick">
+                </div>
+                <div class="glamora-cart-item__details">
+                  <div class="glamora-cart-item__header">
+                    <h4 class="glamora-cart-item__title">Matte Love Lipstick</h4>
+                    <button type="button" class="glamora-cart-item__remove" onclick="removeCartItem(this)">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                  <p class="glamora-cart-item__variant">Shade: Rose Nude</p>
+                  <div class="glamora-cart-item__footer">
+                    <div class="glamora-quantity-stepper">
+                      <button type="button" class="glamora-qty-btn minus" onclick="changeItemQty(this, -1)">-</button>
+                      <span class="glamora-qty-val">1</span>
+                      <button type="button" class="glamora-qty-btn plus" onclick="changeItemQty(this, 1)">+</button>
+                    </div>
+                    <div class="glamora-cart-item__price">Rs. 1,499</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="glamora-cart-item">
+                <div class="glamora-cart-item__image">
+                  <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=120" alt="Hydra Moisturizer">
+                </div>
+                <div class="glamora-cart-item__details">
+                  <div class="glamora-cart-item__header">
+                    <h4 class="glamora-cart-item__title">Hydra Moisturizer</h4>
+                    <button type="button" class="glamora-cart-item__remove" onclick="removeCartItem(this)">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                  <p class="glamora-cart-item__variant">50ml</p>
+                  <div class="glamora-cart-item__footer">
+                    <div class="glamora-quantity-stepper">
+                      <button type="button" class="glamora-qty-btn minus" onclick="changeItemQty(this, -1)">-</button>
+                      <span class="glamora-qty-val">1</span>
+                      <button type="button" class="glamora-qty-btn plus" onclick="changeItemQty(this, 1)">+</button>
+                    </div>
+                    <div class="glamora-cart-item__price">Rs. 2,199</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="glamora-cart-summary">
+              <div class="glamora-subtotal-row">
+                <span class="subtotal-label">Subtotal</span>
+                <span class="subtotal-amount">Rs. 6,697</span>
+              </div>
+              <button class="glamora-checkout-btn">
+                <span>Checkout</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <div class="glamora-free-shipping-note">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <span>Free shipping on orders above Rs. 5,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- You May Also Like -->
+          <div class="glamora-cross-sell">
+            <h4 class="glamora-cross-sell__title">You May Also Like</h4>
+            <div class="glamora-cross-sell__list">
+              <div class="glamora-cross-sell__item">
+                <div class="glamora-cross-sell__img">
+                  <img src="https://images.unsplash.com/photo-1608248597359-54316279f727?w=100" alt="Rose Face Mist" width="40" height="40">
+                </div>
+                <div class="glamora-cross-sell__info">
+                  <h5 class="glamora-cross-sell__name">Rose Face Mist</h5>
+                  <span class="glamora-cross-sell__price">Rs. 1,299</span>
+                </div>
+                <button type="button" class="glamora-cross-sell__add-btn" onclick="quickAddToCart('Rose Face Mist', 'Rs. 1,299', 'https://images.unsplash.com/photo-1608248597359-54316279f727?w=100')">+</button>
+              </div>
+
+              <div class="glamora-cross-sell__item">
+                <div class="glamora-cross-sell__img">
+                  <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100" alt="Vitamin C Serum" width="40" height="40">
+                </div>
+                <div class="glamora-cross-sell__info">
+                  <h5 class="glamora-cross-sell__name">Vitamin C Serum</h5>
+                  <span class="glamora-cross-sell__price">Rs. 2,499</span>
+                </div>
+                <button type="button" class="glamora-cross-sell__add-btn" onclick="quickAddToCart('Vitamin C Serum', 'Rs. 2,499', 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100')">+</button>
+              </div>
+
+              <div class="glamora-cross-sell__item">
+                <div class="glamora-cross-sell__img">
+                  <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=100" alt="Beauty Blender Set" width="40" height="40">
+                </div>
+                <div class="glamora-cross-sell__info">
+                  <h5 class="glamora-cross-sell__name">Beauty Blender Set</h5>
+                  <span class="glamora-cross-sell__price">Rs. 899</span>
+                </div>
+                <button type="button" class="glamora-cross-sell__add-btn" onclick="quickAddToCart('Beauty Blender Set', 'Rs. 899', 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=100')">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small Cart Big Confidence Promo -->
+          <div class="glamora-promo-card">
+            <h4 class="glamora-promo-card__heading">Small Cart<br>Big Confidence</h4>
+            <div class="glamora-promo-card__bag-wrap">
+              <svg width="90" height="95" viewBox="0 0 100 105" fill="none">
+                <rect x="10" y="30" width="80" height="70" rx="6" fill="#FDE4EB" stroke="#E84E75" stroke-width="2"/>
+                <path d="M32 30V20C32 10 68 10 68 20V30" stroke="#E84E75" stroke-width="2.5" stroke-linecap="round"/>
+                <text x="50" y="68" font-family="'Playfair Display', serif" font-size="13" font-weight="700" fill="#E84E75" text-anchor="middle">Glamora</text>
+              </svg>
+            </div>
+            <p class="glamora-promo-card__subtext">Treat Yourself You Deserve It ♡</p>
+          </div>
+
+          <!-- Testimonial -->
+          <div class="glamora-testimonial-card">
+            <div class="glamora-testimonial-header">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Sarah K." class="glamora-testimonial-avatar">
+              <div>
+                <h5 class="glamora-testimonial-title">Real People<br>Real Results</h5>
+                <div class="glamora-testimonial-stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="glamora-testimonial-quote">"My skin has never looked this good! Fast delivery and amazing quality."</p>
+            <p class="glamora-testimonial-author">– Sarah K.</p>
+          </div>
+
+          <!-- Rewards Card -->
+          <div class="glamora-rewards-card">
+            <div class="glamora-rewards-header">
+              <span style="font-size: 20px;">👑</span>
+              <h5 class="glamora-rewards-title">Glamora+</h5>
+              <span class="glamora-rewards-tag">BEAUTY REWARDS CLUB</span>
+            </div>
+            <div class="glamora-rewards-perks">
+              <div class="glamora-rewards-perk"><span class="dot"></span> Earn Points</div>
+              <div class="glamora-rewards-perk"><span class="dot"></span> Exclusive Discounts</div>
+              <div class="glamora-rewards-perk"><span class="dot"></span> Early Access</div>
+              <div class="glamora-rewards-perk"><span class="dot"></span> Birthday Surprises</div>
+            </div>
+            <button type="button" class="glamora-rewards-btn">Join Now</button>
+            <p class="glamora-rewards-footer">More Beauty. More You.</p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== PRODUCT PAGE VIEW ==================== -->
+  <main id="product-view" class="page-view">
+    <div class="glamora-container" style="padding: 30px 20px;">
+      
+      <!-- Product Details Component -->
+      <div class="glamora-product-detail">
+        <div class="glamora-gallery">
+          <div class="glamora-gallery__main">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800" alt="Glow Radiance Night Serum">
+          </div>
+          <div class="glamora-gallery__thumbs">
+            <div class="glamora-gallery__thumb active">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150" alt="Thumb 1">
+            </div>
+            <div class="glamora-gallery__thumb">
+              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150" alt="Thumb 2">
+            </div>
+            <div class="glamora-gallery__thumb">
+              <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=150" alt="Thumb 3">
+            </div>
+            <div class="glamora-gallery__thumb">
+              <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=150" alt="Thumb 4">
+            </div>
+          </div>
+        </div>
+
+        <div class="glamora-product-info">
+          <div class="glamora-product-info__vendor">Glamora Luxury Skincare</div>
+          <h1 class="glamora-product-info__title">Glow Radiance Night Serum & Age Defense</h1>
+          <div class="glamora-product-info__rating">
+            <div class="glamora-stars">★★★★★</div>
+            <span style="font-size: 13px; font-weight: 600; color: #333;">4.9</span>
+            <span style="font-size: 13px; color: #888;">(128 Verified Reviews)</span>
+          </div>
+          <div class="glamora-product-info__pricing">
+            <span class="glamora-product-info__price-current">Rs. 2,999</span>
+            <s class="glamora-product-info__price-compare">Rs. 4,500</s>
+            <span class="glamora-card__badge-discount">33% OFF</span>
+          </div>
+
+          <div class="glamora-urgency-badge">
+            <span>⚡</span>
+            <span>Only 4 units left in stock — order soon!</span>
+          </div>
+
+          <div class="glamora-variant-picker">
+            <div class="glamora-variant-label">Select Size / Formula:</div>
+            <div class="glamora-swatches">
+              <button type="button" class="glamora-swatch-btn active">Rose Nude (30ml)</button>
+              <button type="button" class="glamora-swatch-btn">Radiant Glow (50ml)</button>
+              <button type="button" class="glamora-swatch-btn">Golden Dew (100ml)</button>
+            </div>
+          </div>
+
+          <div class="glamora-product-actions">
+            <div class="glamora-quantity-stepper" style="padding: 4px;">
+              <button type="button" class="glamora-qty-btn minus" onclick="let q=this.nextElementSibling; if(parseInt(q.textContent)>1) q.textContent=parseInt(q.textContent)-1;">-</button>
+              <span class="glamora-qty-val">1</span>
+              <button type="button" class="glamora-qty-btn plus" onclick="let q=this.previousElementSibling; q.textContent=parseInt(q.textContent)+1;">+</button>
+            </div>
+            <button type="button" class="glamora-btn-add-full" onclick="quickAddToCart('Glow Radiance Night Serum', 'Rs. 2,999', 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=120')">
+              Add to Cart
+            </button>
+          </div>
+
+          <button type="button" class="glamora-btn-buynow" onclick="alert('Proceeding to Express Cash on Delivery Checkout!');">
+            ⚡ Buy with Cash on Delivery
+          </button>
+
+          <!-- Accordions -->
+          <div class="glamora-accordion">
+            <div class="glamora-accordion__item">
+              <button type="button" class="glamora-accordion__btn">
+                <span>Product Description & Key Benefits</span>
+                <span class="accordion-icon">−</span>
+              </button>
+              <div class="glamora-accordion__panel open">
+                Formulated with potent botanical extracts and active niacinamide to visibly smooth, brighten, and firm the skin overnight. Penetrates deeply to restore your natural glow without leaving a greasy residue.
+              </div>
+            </div>
+
+            <div class="glamora-accordion__item">
+              <button type="button" class="glamora-accordion__btn">
+                <span>Active Ingredients</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="glamora-accordion__panel">
+                Aqua, 10% Pure Niacinamide, Hyaluronic Acid, Rosehip Seed Oil, Centella Asiatica Extract, Vitamin E, Glycerin, Peptides. Free from parabens, sulfates, and artificial fragrances.
+              </div>
+            </div>
+
+            <div class="glamora-accordion__item">
+              <button type="button" class="glamora-accordion__btn">
+                <span>How to Apply</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="glamora-accordion__panel">
+                Apply 3-4 drops to cleansed skin before moisturizer at night. Gently pat into face and neck in upward motions until fully absorbed. Suitable for daily use.
+              </div>
+            </div>
+
+            <div class="glamora-accordion__item">
+              <button type="button" class="glamora-accordion__btn">
+                <span>Shipping & 7-Day Hassle-Free Returns</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="glamora-accordion__panel">
+                Orders delivered within 2-4 business days across Pakistan. If you are not satisfied with your purchase, return it within 7 days for a full refund or exchange.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Frequently Bought Together / Recommendations -->
+      <section style="margin-top: 50px;">
+        <div class="glamora-section-header">
+          <h2 class="glamora-section-title">Frequently Bought Together</h2>
+        </div>
+        <div class="glamora-products-grid">
+          <div class="glamora-product-card">
+            <div class="glamora-card__image-wrapper">
+              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Hydra Moisturizer" class="glamora-card__img">
+            </div>
+            <div class="glamora-card__body">
+              <h3 class="glamora-card__title">Hydra Moisturizer (50ml)</h3>
+              <div class="glamora-card__pricing"><span class="glamora-card__price-sale" style="color:#222;">Rs. 2,199</span></div>
+              <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Hydra Moisturizer', 'Rs. 2,199', 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300')">+ Add</button>
+            </div>
+          </div>
+
+          <div class="glamora-product-card">
+            <div class="glamora-card__image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248597359-54316279f727?w=300" alt="Rose Face Mist" class="glamora-card__img">
+            </div>
+            <div class="glamora-card__body">
+              <h3 class="glamora-card__title">Rose Face Mist</h3>
+              <div class="glamora-card__pricing"><span class="glamora-card__price-sale" style="color:#222;">Rs. 1,299</span></div>
+              <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Rose Face Mist', 'Rs. 1,299', 'https://images.unsplash.com/photo-1608248597359-54316279f727?w=300')">+ Add</button>
+            </div>
+          </div>
+
+          <div class="glamora-product-card">
+            <div class="glamora-card__image-wrapper">
+              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300" alt="Pure Glow Cleanser" class="glamora-card__img">
+            </div>
+            <div class="glamora-card__body">
+              <h3 class="glamora-card__title">Pure Glow Cleanser</h3>
+              <div class="glamora-card__pricing"><span class="glamora-card__price-sale" style="color:#222;">Rs. 1,299</span></div>
+              <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Pure Glow Cleanser', 'Rs. 1,299', 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300')">+ Add</button>
+            </div>
+          </div>
+
+          <div class="glamora-product-card">
+            <div class="glamora-card__image-wrapper">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300" alt="Rose Quartz Roller" class="glamora-card__img">
+            </div>
+            <div class="glamora-card__body">
+              <h3 class="glamora-card__title">Rose Quartz Roller</h3>
+              <div class="glamora-card__pricing"><span class="glamora-card__price-sale" style="color:#222;">Rs. 999</span></div>
+              <button type="button" class="glamora-btn-add-pill" onclick="quickAddToCart('Rose Quartz Roller', 'Rs. 999', 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300')">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Reviews -->
+      <section style="margin-top: 40px; background: #FFFFFF; border-radius: var(--radius-lg); border: 1px solid var(--color-border); padding: 32px;">
+        <div class="glamora-section-header" style="border-bottom: 1px solid #F5EFF1; padding-bottom: 16px; margin-bottom: 24px;">
+          <div>
+            <h2 class="glamora-section-title">Customer Reviews & Ratings</h2>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
+              <div class="glamora-stars">★★★★★</div>
+              <span style="font-size: 14px; font-weight: 700; color: #1E1E1E;">4.9 out of 5</span>
+              <span style="font-size: 13px; color: #888;">(Based on 128 verified reviews)</span>
+            </div>
+          </div>
+          <button type="button" class="glamora-btn-add-pill" style="width: auto; padding: 10px 24px;">Write a Review</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="border-bottom: 1px solid #F7EDF0; padding-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <strong style="font-size: 13.5px; color: #222;">Zainab M.</strong>
+                <span style="background: #E8F5E9; color: #2E7D32; font-size: 10.5px; font-weight: 600; padding: 2px 6px; border-radius: 4px;">✓ Verified Buyer</span>
+              </div>
+              <span style="font-size: 11.5px; color: #999;">2 days ago</span>
+            </div>
+            <div class="glamora-stars" style="margin-bottom: 6px;">★★★★★</div>
+            <p style="font-size: 13px; color: #555; line-height: 1.5;">
+              "I've been using this night serum for two weeks now and my skin feels noticeably firmer and smoother. The fragrance is very subtle and luxurious. 10/10 recommend!"
+            </p>
+          </div>
+
+          <div style="border-bottom: 1px solid #F7EDF0; padding-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <strong style="font-size: 13.5px; color: #222;">Hira K.</strong>
+                <span style="background: #E8F5E9; color: #2E7D32; font-size: 10.5px; font-weight: 600; padding: 2px 6px; border-radius: 4px;">✓ Verified Buyer</span>
+              </div>
+              <span style="font-size: 11.5px; color: #999;">1 week ago</span>
+            </div>
+            <div class="glamora-stars" style="margin-bottom: 6px;">★★★★★</div>
+            <p style="font-size: 13px; color: #555; line-height: 1.5;">
+              "Delivery was super fast within 2 days in Lahore. Very nicely packaged with bubble wrap. Product authenticity is 100% genuine."
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Main Footer -->
+  <footer class="glamora-footer">
+    <div class="glamora-container">
+      <div class="glamora-footer__grid">
+        <div>
+          <div class="glamora-logo" style="margin-bottom: 12px;">
+            <svg class="glamora-logo__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor">
+              <path d="M16 4C18 8 24 10 24 16C24 22 18 26 16 28C14 26 8 22 8 16C8 10 14 8 16 4Z" fill="#FDF0F4" stroke="#E84E75" stroke-width="1.8"/>
+              <circle cx="16" cy="16" r="3" fill="#E84E75"/>
+            </svg>
+            <div>
+              <span class="glamora-logo__text">Glamora</span>
+              <span class="glamora-logo__tagline">BEAUTY LIVES HERE</span>
+            </div>
+          </div>
+          <p style="font-size: 12.5px; color: var(--color-muted); line-height: 1.6; max-width: 320px;">
+            Your curated sanctuary for authentic skincare, luxury makeup, and holistic self-care.
+          </p>
+        </div>
+        <div>
+          <h4 class="glamora-footer__title">Quick Links</h4>
+          <ul class="glamora-footer__links">
+            <li><a href="#">Shop All Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Premium Skincare</a></li>
+            <li><a href="#">About Glamora</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="glamora-footer__title">Customer Care</h4>
+          <ul class="glamora-footer__links">
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">7-Day Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="glamora-footer__title">Get 15% OFF</h4>
+          <p style="font-size: 12px; color: var(--color-muted); margin-bottom: 12px;">Subscribe for exclusive beauty offers & tips.</p>
+          <div style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Enter your email" style="flex: 1; padding: 10px 14px; border-radius: 50px; border: 1px solid #EAD8DC; font-size: 12px;">
+            <button type="button" class="glamora-btn-add-pill" style="width: auto; padding: 0 16px;">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="glamora-footer__bottom">
+        <span>&copy; 2026 Glamora Beauty Lives Here. All rights reserved.</span>
+        <div style="display: flex; gap: 10px; font-size: 11px; color: #777;">
+          <span>💵 Cash on Delivery</span>
+          <span>💳 Visa / Mastercard</span>
+          <span>📱 EasyPaisa / JazzCash</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./assets/glamora-cart.js"></script>
+  <script src="./assets/glamora-countdown.js"></script>
+  <script src="./assets/glamora-slider.js"></script>
+  <script src="./assets/glamora-product.js"></script>
+  <script>
+    function switchPage(page) {
+      document.querySelectorAll('.glamora-demo-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+      
+      if (page === 'home') {
+        document.getElementById('home-view').classList.add('active');
+        document.querySelectorAll('.glamora-demo-btn')[0].classList.add('active');
+      } else {
+        document.getElementById('product-view').classList.add('active');
+        document.querySelectorAll('.glamora-demo-btn')[1].classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

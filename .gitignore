@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+.shopify
+node_modules/
+.env
+.idea/
+.vscode/
+*.zip
